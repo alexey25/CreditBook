@@ -1,0 +1,22 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Увеличить долг</title>
+    <link rel="stylesheet" type="text/css" href="~/css/style.css" />
+</head>
+<body>
+    <div class="block">
+        <div class="title">
+            <p>Увеличить долг</p>
+        </div>
+        <div class="line">
+            <hr style="background-color:#000000;opacity:0.1;">
+        </div>
+        <form action="~/Person/GetCreditIncrease" method="post">
+            <label>Сумма увеличения долга:</label> <br />
+            <input class="form-control" type="text" name="creditIncrease" />  <br />
+            <input type="hidden" name="id" value="@ViewBag.Id" />  <br />
+            <button class="btn btn-primary" type="submit">Отправить</button>
+        </form>
+    </div>
+</body>
+</html>

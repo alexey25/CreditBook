@@ -1,0 +1,22 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Удалить</title>
+    <link rel="stylesheet" type="text/css" href="~/css/style.css" />
+</head>
+<body>
+    <div class="block block-delete">
+        <div class="title">
+            <p>Удалить</p>
+        </div>
+        <div class="line">
+            <hr style="background-color:#000000;opacity:0.1;">
+        </div>
+        <p>Вы действительно хотите удалить @ViewBag.FIO ?</p>
+        <form action="~/Person/GetCreditDelete" method="post">
+            <input type="hidden" name="id" value="@ViewBag.id" />  <br />
+            <button class="btn btn-primary btn-delete-left" type="submit">Да</button>
+            <a class="btn btn-primary btn-delete-right" href="~/">Нет</a>
+        </form>
+    </div>
+</body>
+</html>

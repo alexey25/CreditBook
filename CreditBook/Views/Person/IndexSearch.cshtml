@@ -1,0 +1,52 @@
+﻿@using CreditBook.Models
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Долговая книга</title>
+    <link rel="stylesheet" type="text/css" href="~/css/style.css" />
+</head>
+<body>
+    <div class="search-block">
+        <div class="search-string-block">
+            <div>
+                <div class="search-block-title">
+                    Поиск
+                </div>
+                <div class="cancel">
+                    <a href="~/">Отменить</a>
+                </div>
+            </div>
+            <form action="~/Person/IndexSearch" method="get">
+                <input class="search-string" type="search" name="name" value="" />
+                @*<button class="btn search-btn btn-search" type="submit">Поиск</button>*@
+            </form>
+        </div>
+        <ul class="list">
+            @foreach (Person person in ViewBag.Persons)
+            {
+                @*<li class="list-search" id="@person.Id"><button class="list-search-button"> @person.Name</button></li>*@
+                <li class="list-search" id="@person.Id">
+                    <a href="/Person/Index/@person.Id" class="list-search-link">
+                    <div class="list-search-button">
+                        <div class="person-icon">
+                        </div>
+                        <div class="person-txt">
+                            <div class="list-search-button-surname">
+                                @person.Surname
+                            </div>
+                            <div class="list-search-button-name">
+                                @person.Name @person.Patronymic
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </li>
+            }
+        </ul>
+        <br />
+        <a href="/Person/Add" class="btn search-btn">Добавить</a>
+    </div>
+    <div class="info-block">
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Редактировать</title>
+    <link rel="stylesheet" type="text/css" href="~/css/style.css" />
+</head>
+<body>
+    <div class="block">
+        <div class="title">
+            <p>Редактировать</p>
+        </div>
+        <div class="line">
+            <hr style="background-color:#000000;opacity:0.1;">
+        </div>
+        <form action="~/Person/Edit" method="post">
+            <div class="valid-error" asp-validation-summary="All"></div>
+            <label>Фамилия:</label> <br />
+            <input class="form-control" type="text" name="surname" value="@ViewBag.Person.Surname" /> <br />
+            <label>Имя:</label> <br />
+            <input class="form-control" type="text" name="name" value="@ViewBag.Person.Name" /><br />
+            <label>Отчество:</label> <br />
+            <input class="form-control" type="text" name="patronymic" value="@ViewBag.Person.Patronymic" /> <br />
+            <label>Номер телефона:</label> <br />
+            <input class="form-control" type="text" name="phoneNumber" value="@ViewBag.Person.PhoneNumber" /> <br />
+            <input type="hidden" name="id" value="@ViewBag.Person.Id" />  <br />
+            <button class="btn btn-primary" type="submit">Отправить</button>
+        </form>
+    </div>
+</body>
+</html>
