@@ -10,6 +10,7 @@ namespace CreditBook.ContextFolder
     public class DataContext : DbContext
     {
         public DbSet<Person> Persons { get; set; }
+        public DbSet<Audit> Audits { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

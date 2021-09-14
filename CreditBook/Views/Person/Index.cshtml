@@ -109,6 +109,28 @@
                     <a href="/Person/Edit/@ViewBag.Person.Id" class="btn btn-edit">Редактировать</a>
                     <a href="/Person/Delete/@ViewBag.Person.Id" class="btn btn-edit">Удалить</a>
                 </div>
+                <table class="table table-sm table-striped table-bordered">
+                    <caption>Аудит</caption>
+                    <thead>
+                        <tr>
+                            <th class="operation">Имя операции</th>
+                            <th class="amount">Сумма</th>
+                            <th class="data-operation">Дата операции</th>
+                        </tr>
+                    </thead>
+                </table>
+                <div class="audit">
+                    <table class="table table-sm table-striped table-bordered">
+                        @foreach (var audit in ViewBag.Audits)
+                        {
+                            <tr>
+                                <td class="operation">@audit.Operation</td>
+                                <td class="amount">@audit.Amount</td>
+                                <td class="data-operation">@audit.DataOperation</td>
+                            </tr>
+                        }
+                    </table>
+                </div>
             }
         </div>
     </div>

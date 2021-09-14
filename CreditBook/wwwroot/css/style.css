@@ -257,3 +257,31 @@
 .valid-error {
     color: red;
 }
+
+/* audit
+-------------------------------------------------- */
+
+.audit {
+    width: 100%;
+    height: 20vh;
+    padding: 0px;
+    margin-top: -17px;
+    border: 1px solid #DBD7D2;
+    overflow-y: scroll;
+}
+
+caption {
+    caption-side: top;
+    text-align: center;
+}
+
+.operation {
+    width: 200px;
+}
+
+.amount {
+    width: 100px;
+}
+
+.data-operation {
+}

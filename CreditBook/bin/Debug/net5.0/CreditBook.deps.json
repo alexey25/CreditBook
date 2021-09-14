@@ -33,6 +33,7 @@
     ".NETCoreApp,Version=v5.0": {
       "CreditBook/1.0.0": {
         "dependencies": {
+          "Microsoft.EntityFrameworkCore.Analyzers": "5.0.9",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.9",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.9",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",

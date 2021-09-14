@@ -20,6 +20,9 @@ namespace CreditBook.Controllers
                 var person = persons.Where(x => x.Id == id).First();
                 ViewBag.Person = person;
                 ViewBag.FIO = person.Surname + " " + person.Name[0] + "." + person.Patronymic[0] + ".";
+
+                var Audits = new DataContext().Audits;
+                ViewBag.Audits = Audits.Where(x => x.PersonId == id);
             }
             else
             {
@@ -51,6 +54,7 @@ namespace CreditBook.Controllers
             {
                 using (var db = new DataContext())
                 {
+                    person.LastModifyData = DateTime.Now;
                     db.Persons.Add(person);
                     db.SaveChanges();
                 }
@@ -76,9 +80,17 @@ namespace CreditBook.Controllers
             var person = persons.Where(x => x.Id == id).First();
             person.Credit -= creditReduce;
             person.LastModifyData = DateTime.Now;
+
+            var audit = new Audit();
+            audit.PersonId = id;
+            audit.Operation = "Уменьшение долга";
+            audit.DataOperation = DateTime.Now;
+            audit.Amount = creditReduce;
+
             using (var db = new DataContext())
             {
                 db.Persons.Update(person);
+                db.Audits.Add(audit);
                 db.SaveChanges();
             }
             return Redirect("~/");
@@ -98,8 +110,17 @@ namespace CreditBook.Controllers
             var person = persons.Where(x => x.Id == id).First();
             person.Credit += creditIncrease;
             person.LastModifyData = DateTime.Now;
+
+            var audit = new Audit();
+            audit.PersonId = id;
+            audit.Operation = "Увеличение долга";
+            audit.DataOperation = DateTime.Now;
+            audit.Amount = creditIncrease;
+
+
             using (var db = new DataContext())
             {
+                db.Audits.Add(audit);
                 db.Persons.Update(person);
                 db.SaveChanges();
             }

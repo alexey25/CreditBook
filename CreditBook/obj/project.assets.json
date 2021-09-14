@@ -5791,24 +5791,25 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "Microsoft.EntityFrameworkCore.Analyzers >= 5.0.9",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.9",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.9"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\a.kurzin\\.nuget\\packages\\": {}
+    "C:\\Users\\Alexey\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\a.kurzin\\Desktop\\CreditBook\\CreditBook\\CreditBook.csproj",
+      "projectUniqueName": "C:\\Users\\Alexey\\Desktop\\CreditBook\\CreditBook\\CreditBook.csproj",
       "projectName": "CreditBook",
-      "projectPath": "C:\\Users\\a.kurzin\\Desktop\\CreditBook\\CreditBook\\CreditBook.csproj",
-      "packagesPath": "C:\\Users\\a.kurzin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\a.kurzin\\Desktop\\CreditBook\\CreditBook\\obj\\",
+      "projectPath": "C:\\Users\\Alexey\\Desktop\\CreditBook\\CreditBook\\CreditBook.csproj",
+      "packagesPath": "C:\\Users\\Alexey\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Alexey\\Desktop\\CreditBook\\CreditBook\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\a.kurzin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Alexey\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5834,6 +5835,10 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "Microsoft.EntityFrameworkCore.Analyzers": {
+            "target": "Package",
+            "version": "[5.0.9, )"
+          },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[5.0.9, )"
@@ -5863,7 +5868,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
